@@ -4,3 +4,24 @@ input[type=number]::-webkit-outer-spin-button {
    opacity: 1;
 
 }
+
+#controls{
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    background-color: burlywood;
+    padding: 5px;
+    border: 2px solid #000000;
+    border-top: 2px solid #545454;
+    border-left: 2px solid #545454;
+}
+
+.control-inner{
+    margin: 5px;
+}
+
+#macacar{
+    background-color: red;
+    padding: 5px;
+    color: white;
+}

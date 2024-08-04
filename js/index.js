@@ -1,7 +1,7 @@
 var mainDiv = document.getElementById("main-div");
 var plainText = document.getElementById("plaintext");
-const MAX_ASCII = 127;
-const MIN_ASCII = 33;
+var maxASCII = 127;
+var minASCII = 33;
 const COLOUR_INT = 16777215;
 
 function intToColour(num){
@@ -11,7 +11,7 @@ function intToColour(num){
 function monkeyFinger(rainbowMode){
     let button = document.createElement("button");
 
-    let randomSign = String.fromCharCode(Math.floor(Math.random() * (MAX_ASCII-MIN_ASCII) + MIN_ASCII));
+    let randomSign = String.fromCharCode(Math.floor(Math.random() * (maxASCII-minASCII) + minASCII));
     button.textContent = randomSign;
     plainText.textContent += randomSign;
 
@@ -40,6 +40,6 @@ function macacar(){
     }
 }
 
-document.getElementById("multiplier").addEventListener("click", (e) => {
+document.getElementById("macacar").addEventListener("click", (e) => {
     macacar();
 });
