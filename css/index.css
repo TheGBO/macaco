@@ -5,23 +5,73 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#title{
+    align-self: center;
+}
+
+.main-div{
+    padding: 15px;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;;
+    border: 2px solid black;
+    width: 60%;
+}
+
+.main-div *{
+    align-self: center;
+}
+
+#plaintext{
+    overflow-wrap: anywhere;
+}
+
+#magago{
+    width:50%;
+    padding: 5px;
+    background-color: black;
+    border: 2px solid #000000;
+}
+
+.monkey-gif{
+    display: inline-block;
+    align-self: center;
+    margin: auto;
+}
+
+#monkey-gifs{
+    display: none;
+    flex-direction: row;
+}
+
 #controls{
+    width: 50%;
     display: flex;
     flex-direction: column;
-    max-width: fit-content;
     background-color: burlywood;
     padding: 5px;
     border: 2px solid #000000;
     border-top: 2px solid #545454;
     border-left: 2px solid #545454;
+    margin: 5px;
 }
 
 .control-inner{
-    margin: 5px;
+    margin: 15px;
+    width: 100%;
 }
 
 #macacar{
     background-color: red;
-    padding: 5px;
+    padding: 15px;
     color: white;
+    width: 100%;
 }

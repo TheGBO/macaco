@@ -7,29 +7,34 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <h1>MACACADA GENERATOR 2000</h1>
-    <img src="img/Monkey-typing.jpg" alt="magago">
-    <div id="controls">
-        <button id="macacar">Macacar</button>
-
-        <div class="control-inner">
-            <input type="number" name="amount" id="amount" value="32">
-            <label for="amount">Number of characters</label>
+    <div class="main-div">
+        <h1 id="title">MACACADA GENERATOR 2000</h1>
+        <img src="img/Monkey-typing.jpg" alt="magago" id="magago">
+        <div id="monkey-gifs">
+            <img src="img/banana.gif" alt="banana" class="monkey-gif">
         </div>
-        
-        <div class="control-inner">
-            <input type="number" name="interval" id="interval-slider" value="128">
-            <label for="interval">Interval (ms)</label>
+        <div id="controls">
+            
+            <div class="control-inner">
+                <input type="number" name="amount" id="amount" value="32">
+                <label for="amount">Number of characters</label>
+            </div>
+            
+            <div class="control-inner">
+                <input type="number" name="interval" id="interval-slider" value="128">
+                <label for="interval">Interval (ms)</label>
+            </div>
+            
+            <div class="control-inner">
+                <input type="checkbox" name="rainbow-mode" id="rainbow-mode">
+                <label for="rainbow-mode">Rainbow mode</label>
+            </div>
+            <button id="macacar">Macacar</button>
         </div>
-        
-        <div class="control-inner">
-            <input type="checkbox" name="rainbow-mode" id="rainbow-mode">
-            <label for="rainbow-mode">Rainbow mode</label>
+        <div id="strokes">
+            
+            <p id="plaintext"></p>
         </div>
-    </div>
-    <div id="main-div">
-        
-        <p id="plaintext"></p>
     </div>
     <script src="./js/index.js"></script>
 </body>

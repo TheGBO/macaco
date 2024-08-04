@@ -1,5 +1,7 @@
-var mainDiv = document.getElementById("main-div");
+var strokes = document.getElementById("strokes");
 var plainText = document.getElementById("plaintext");
+var monkeyGifs = document.getElementById("monkey-gifs");
+
 var maxASCII = 127;
 var minASCII = 33;
 const COLOUR_INT = 16777215;
@@ -22,7 +24,7 @@ function monkeyFinger(rainbowMode){
         button.style.color = intToColour(invertRandColour);
     }
     new Audio("sound/keystroke.mp3").play();
-    mainDiv.appendChild(button);
+    strokes.appendChild(button);
 }
 
 function macacar(){
@@ -42,4 +44,8 @@ function macacar(){
 
 document.getElementById("macacar").addEventListener("click", (e) => {
     macacar();
+    monkeyGifs.style.display = "flex";
+    setTimeout(() => {
+        monkeyGifs.style.display = "none";
+    }, 9600)
 });
