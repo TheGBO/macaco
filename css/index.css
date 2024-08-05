@@ -84,3 +84,13 @@ body{
     width: 100%;
     flex: 1;
 }
+
+@media screen and (max-device-width: 850px) {
+    .main-div{
+        width: 100%;
+    }
+
+    #controls, #magago{
+        width: 100%;
+    }
+}

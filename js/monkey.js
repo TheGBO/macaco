@@ -53,9 +53,9 @@ function monkeyFinger(m){
 
     if(m.rainbowMode){
         let randomColourInt = Math.floor(Math.random() * colourUtils.COLOUR_INT);
-        let invertRandColour = colourUtils.COLOUR_INT - randomColourInt;
-        strokeDiv.style.backgroundColor = colourUtils.intToColour(randomColourInt);
-        strokeDiv.style.color = colourUtils.intToColour(invertRandColour);
+        let colour = colourUtils.intToColour(randomColourInt);
+        strokeDiv.style.backgroundColor = colour
+        strokeDiv.style.color = colourUtils.invertColour(colour);
     }
 
     let strokeSound = new Audio("sound/keystroke.mp3");
