@@ -32,6 +32,7 @@ body{
 
 #plaintext{
     overflow-wrap: anywhere;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #magago{
@@ -39,17 +40,6 @@ body{
     padding: 5px;
     background-color: black;
     border: 2px solid #000000;
-}
-
-.monkey-gif{
-    display: inline-block;
-    align-self: center;
-    margin: auto;
-}
-
-#monkey-gifs{
-    display: none;
-    flex-direction: row;
 }
 
 #controls{

@@ -1,12 +1,21 @@
 var strokes = document.getElementById("strokes");
 var plainText = document.getElementById("plaintext");
-var monkeyGifs = document.getElementById("monkey-gifs");
-
+var magago = document.getElementById("magago");
 
 const COLOUR_INT = 16777215;
 
 function intToColour(num){
     return "#"+num.toString(16);;
+}
+
+function setMonkeyGif(typing){
+    console.log("setting");
+    if(typing){
+        magago.src = 'img/typing-monkey.gif';
+    }
+    else{
+        magago.src = 'img/idle-monkey.jpg';
+    }
 }
 
 function monkeyFinger(rainbowMode, minCharCode, maxCharCode){
@@ -21,7 +30,7 @@ function monkeyFinger(rainbowMode, minCharCode, maxCharCode){
     
     let button = document.createElement("button");
     button.textContent = randomSign;
-    button.classList.add("stroke-btn")
+    button.classList.add("stroke-btn");
 
     if(rainbowMode){
         let randomColourInt = Math.floor(Math.random() * COLOUR_INT);
@@ -30,13 +39,16 @@ function monkeyFinger(rainbowMode, minCharCode, maxCharCode){
         button.style.color = intToColour(invertRandColour);
     }
 
-    new Audio("sound/keystroke.mp3").play();
+    let strokeSound = new Audio("sound/keystroke.mp3");
+    strokeSound.volume = 0.125
+    strokeSound.play();
     plainText.textContent += randomSign;
     strokes.appendChild(button);
 }
 
 function macacar(){
-    let macacadas = document.getElementById("amount").value;
+    setMonkeyGif(true);
+    let strokes = document.getElementById("amount").value;
     let rainbowMode = document.getElementById("rainbow-mode").checked;
     let interval = document.getElementById("interval-slider").value;
 
@@ -44,18 +56,18 @@ function macacar(){
     let maxCharCode = parseInt(document.getElementById("char-code-max").value, 10);
     
     new Audio("sound/magago.m4a").play();
-    for(let i = 0; i < macacadas; i++)
+    for(let i = 0; i < strokes; i++)
     {
         setTimeout(() => {
             monkeyFinger(rainbowMode, minCharCode, maxCharCode);
+            if(i == strokes - 1){
+                setMonkeyGif(false);
+            }
         }, i * interval);
     }
 }
 
 document.getElementById("macacar").addEventListener("click", (e) => {
     macacar();
-    monkeyGifs.style.display = "flex";
-    setTimeout(() => {
-        monkeyGifs.style.display = "none";
-    }, 9600)
+    
 });
