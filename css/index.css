@@ -66,8 +66,21 @@ body{
     width: 100%;
 }
 
-.stroke-btn{
+.stroke{
     width: 25px;
     height: 25px;
-    
+    background-color: #ffffff;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px #000000 solid;
+}
+
+#strokes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    width: 100%;
+    flex: 1;
 }
