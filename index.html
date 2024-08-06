@@ -15,28 +15,33 @@
         <div id="controls">
             
             <div class="control-inner">
-                <input type="number" name="amount" id="amount" value="32">
+                <input class="num-input" type="number" name="amount" id="amount" value="256" required min="1" step="1">
                 <label for="amount">Number of characters</label>
             </div>
             
             <div class="control-inner">
-                <input type="number" name="interval" id="interval-ms" value="128">
+                <input class="num-input" type="number" name="interval" id="interval-ms" value="64">
                 <label for="interval">Interval (ms)</label>
             </div>
             
             <div class="control-inner">
-                <input type="checkbox" name="rainbow-mode" id="rainbow-mode">
+                <input class="check-input" type="checkbox" name="rainbow-mode" id="rainbow-mode">
                 <label for="rainbow-mode">Rainbow mode</label>
             </div>
 
             <div class="control-inner">
-                <input type="number" name="char-code-min" id="char-code-min" value="32">
+                <input class="num-input" type="number" name="char-code-min" id="char-code-min" value="97" step="1" required min="1">
                 <label for="char-code-min">Minimum character code number</label>
             </div>
 
             <div class="control-inner">
-                <input type="number" name="char-code-max" id="char-code-max" value="127">
+                <input class="num-input" type="number" name="char-code-max" id="char-code-max" value="123" step="1">
                 <label for="char-code-min">Maximum character code number</label>
+            </div>
+
+            <div class="control-inner">
+                <input class="num-input" type="number" name="space-rate" id="space-rate" value="16" max="100">
+                <label for="char-code-min">Space rate (%)</label>
             </div>
 
             <div class="control-inner">

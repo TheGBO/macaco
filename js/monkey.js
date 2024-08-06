@@ -22,36 +22,36 @@ function setMonkeyGif(typing){
     }
 }
 
-export function macacar(m){
+export function macacar(config){
     setMonkeyGif(true);
     
     new Audio("sound/magago.m4a").play();
-    for(let i = 0; i < m.amount; i++)
+    for(let i = 0; i < config.amount; i++)
     {
         setTimeout(() => {
-            monkeyFinger(m);
-            if(i == m.amount - 1){
+            monkeyFinger(config);
+            if(i == config.amount - 1){
                 setMonkeyGif(false);
             }
-        }, i * m.intervalMs);
+        }, i * config.intervalMs);
     }
 }
 
-function monkeyFinger(m){
+function monkeyFinger(config){
+    console.log(config);
     
-    let decimalCode = Math.floor(Math.random() * (m.maxCharCode-m.minCharCode) + m.minCharCode);
+    let decimalCode = Math.floor(Math.random() * (config.maxCharCode-config.minCharCode) + config.minCharCode);
     let randomSign = String.fromCharCode(decimalCode);
-
-    console.log(m);
-    console.log(`${m.minCharCode}-${m.maxCharCode}`);
-    console.log(decimalCode);
-    console.log(randomSign);
-    
     let strokeDiv = document.createElement("div");
-    strokeDiv.textContent = randomSign;
-    strokeDiv.classList.add("stroke");
 
-    if(m.rainbowMode){
+    strokeDiv.classList.add("stroke");
+    insertSign(randomSign, strokeDiv);
+    if(config.spaceRate > Math.random()){
+        insertSign(" ", strokeDiv);
+        console.log("space rate requirement met");
+    }
+
+    if(config.rainbowMode){
         let randomColourInt = Math.floor(Math.random() * colourUtils.COLOUR_INT);
         let colour = colourUtils.intToColour(randomColourInt);
         strokeDiv.style.backgroundColor = colour
@@ -61,7 +61,11 @@ function monkeyFinger(m){
     let strokeSound = new Audio("sound/keystroke.mp3");
     strokeSound.volume = 0.125;
     strokeSound.play();
-    plainText.textContent += randomSign;
     strokes.appendChild(strokeDiv);
+}
+
+function insertSign(randomSign, strokeDiv){
+    strokeDiv.textContent = randomSign;
+    plainText.textContent += randomSign;
 }
 

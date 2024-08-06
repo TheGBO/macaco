@@ -1,9 +1,10 @@
 export default class MacacadaInfo {
-    constructor(amount, rainbowMode, intervalMs, charCodeMin, charCodeMax) {
-        this.amount = amount;
-        this.rainbowMode = rainbowMode;
-        this.intervalMs = intervalMs;
-        this.minCharCode = charCodeMin;
-        this.maxCharCode = charCodeMax;
+    constructor(config) {
+        this.amount = config.amount;
+        this.rainbowMode = config.rainbowMode;
+        this.intervalMs = config.intervalMs;
+        this.minCharCode = config.minCharCode;
+        this.maxCharCode = config.maxCharCode;
+        this.spaceRate = config.spaceRate;
     }
 }
