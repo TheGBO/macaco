@@ -38,34 +38,38 @@ export function macacar(config){
 }
 
 function monkeyFinger(config){
-    console.log(config);
-    
+
     let decimalCode = Math.floor(Math.random() * (config.maxCharCode-config.minCharCode) + config.minCharCode);
     let randomSign = String.fromCharCode(decimalCode);
-    let strokeDiv = document.createElement("div");
 
-    strokeDiv.classList.add("stroke");
-    insertSign(randomSign, strokeDiv);
+    //insert sign
+    insertSign(randomSign, config);
     if(config.spaceRate > Math.random()){
-        insertSign(" ", strokeDiv);
-        console.log("space rate requirement met");
+        insertSign(" ", config);
     }
 
+    //play keystroke audio
+    let strokeSound = new Audio("sound/keystroke.mp3");
+    strokeSound.volume = 0.125;
+    strokeSound.play();
+    
+}
+
+//sign means any unicode character in this context
+function insertSign(randomSign, config){
+    //create strokeDiv
+    let strokeDiv = document.createElement("div");
+    strokeDiv.classList.add("stroke");
+    //set strokeDiv colour
     if(config.rainbowMode){
         let randomColourInt = Math.floor(Math.random() * colourUtils.COLOUR_INT);
         let colour = colourUtils.intToColour(randomColourInt);
         strokeDiv.style.backgroundColor = colour
         strokeDiv.style.color = colourUtils.invertColour(colour);
     }
-
-    let strokeSound = new Audio("sound/keystroke.mp3");
-    strokeSound.volume = 0.125;
-    strokeSound.play();
-    strokes.appendChild(strokeDiv);
-}
-
-function insertSign(randomSign, strokeDiv){
+    //assign text content to the plainText and strokeDiv
     strokeDiv.textContent = randomSign;
     plainText.textContent += randomSign;
+    strokes.appendChild(strokeDiv);
 }
 
