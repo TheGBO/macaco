@@ -1,18 +1,23 @@
-var localePath = "data/locale.json"
 var userLang = navigator.language.substring(0,2);
 
-export default function initTranslationServer(){
-    loadLocales();
+export default function initTranslationServer(localePath){
+    loadLocales(localePath);
 }
 
-function loadLocales(){
+function loadLocales(localePath){
+    //the html element needs this ID 
+    //<html id="language-marker" lang="en">
+    //default language can be anything, english is preferrable.
     document.getElementById("language-marker").lang = userLang;
-    let localeData = fetch(localePath).then((res) => {
+
+    //fetch the json file containing translations
+    fetch(localePath).then((res) => {
         if(!res.ok){
             throw new Error("HTTP ERROR");
         }
         return res.json();
     }).then((data =>{
+        //iterate through data and languages
         for(let lang in data){
             if(lang == userLang){
                 let currentLang = data[lang];
@@ -29,6 +34,7 @@ function loadLocales(){
     })).catch();
 }
 
+//search elements using text content as a parameter
 function getElementByText(str){
     let elements = document.querySelectorAll("body *");
     for(let e in elements){

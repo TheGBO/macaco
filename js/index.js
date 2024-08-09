@@ -17,7 +17,7 @@ var spaceRate = document.getElementById("space-rate");
 
 //services
 import initTranslationServer from "./translationService.js";
-initTranslationServer();
+initTranslationServer("data/locale.json");
 
 document.getElementById("macacar").addEventListener("click", (e) => {
     monkey.setElements(monkeyIMG, plainText, strokes);

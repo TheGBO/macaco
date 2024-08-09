@@ -1,18 +1,18 @@
-import MacacadaInfo from "./macacadaInfo.js";
 import * as colourUtils from "./colourUtils.js";
 
 var monkeyIMG;
 var plainText;
 var strokes;
 
+//set reference to html elements
 export function setElements(imageElement, textElement, strokesElement){
     monkeyIMG = imageElement;
     plainText = textElement;
     strokes = strokesElement;
 }
 
+//monkey gif animation
 function setMonkeyGif(typing){
-    console.log("setting");
     console.log(monkeyIMG);
     if(typing){
         monkeyIMG.src = 'img/typing-monkey.gif';
@@ -22,6 +22,7 @@ function setMonkeyGif(typing){
     }
 }
 
+//generate the random text
 export function macacar(config){
     setMonkeyGif(true);
     
@@ -37,6 +38,7 @@ export function macacar(config){
     }
 }
 
+//singe keystroke generation
 function monkeyFinger(config){
 
     let decimalCode = Math.floor(Math.random() * (config.maxCharCode-config.minCharCode) + config.minCharCode);
