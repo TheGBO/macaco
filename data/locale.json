@@ -1,0 +1,30 @@
+
+{
+    "en":
+    {
+        "ui.control.amount": "Amount of characters",
+        "ui.control.intervalMs": "Interval in Milliseconds",
+        "ui.control.rainbowMode": "Rainbow mode",
+        "ui.control.minCharCode": "Minimum UNICODE character number",
+        "ui.control.maxCharCode": "Maximum UNICODE character number",
+        "ui.control.spaceRate": "Space rate (%)"
+    },
+    "pt":
+    {
+        "ui.control.amount": "Quantia de caracteres",
+        "ui.control.intervalMs": "Intervalo em Milissegundos",
+        "ui.control.rainbowMode": "Modo arco-íris",
+        "ui.control.minCharCode": "Número máximo de código UNICODE",
+        "ui.control.maxCharCode": "Número mínimo de código UNICODE",
+        "ui.control.spaceRate": "Taxa de espaços (%)"
+    },
+    "es":
+    {
+        "ui.control.amount": "Cantidad de carácteres",
+        "ui.control.intervalMs": "Intervalo en Milisegundos",
+        "ui.control.rainbowMode": "Modo arcoíris",
+        "ui.control.minCharCode": "Número máximo de código UNICODE",
+        "ui.control.maxCharCode": "Número mínimo de código UNICODE",
+        "ui.control.spaceRate": "Frequencia de espacios (%)"
+    }
+}

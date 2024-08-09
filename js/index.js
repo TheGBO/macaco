@@ -15,6 +15,10 @@ var minCharCode = document.getElementById("char-code-min");
 var maxCharCode = document.getElementById("char-code-max");
 var spaceRate = document.getElementById("space-rate");
 
+//services
+import initTranslationServer from "./translationService.js";
+initTranslationServer();
+
 document.getElementById("macacar").addEventListener("click", (e) => {
     monkey.setElements(monkeyIMG, plainText, strokes);
 
