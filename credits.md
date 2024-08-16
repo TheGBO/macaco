@@ -1,0 +1,1 @@
+Credits to https://github.com/Z2r-YT/7-Aero-Stylesheet, I used his work as reference to make the website frutiger aero.

@@ -5,12 +5,28 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
+@font-face {
+    font-family: 'Frutiger';
+    src: URL('fonts/Frutiger.ttf') format('truetype');
+  }
+
+* {
+    font-family: Frutiger;
+    font-size: 12pt;
+}
+
+h1{
+    font-size: 24pt;
+}
+
 body{
     margin: 0;
     padding: 0;
     display: flex;
-    width: 100%;
+    width: 100vw;
     justify-content: center;
+    background: rgb(75,122,222);
+    background: radial-gradient(circle, rgba(75,122,222,1) 0%, rgba(24,105,179,1) 35%, rgba(38,131,200,1) 54%, rgba(0,212,255,1) 85%, rgba(148,189,198,1) 100%);
 }
 
 #title{
@@ -19,11 +35,18 @@ body{
 
 .main-div{
     padding: 15px;
-    background-color: aquamarine;
     display: flex;
     flex-direction: column;;
-    border: 2px solid black;
     width: 60%;
+    border-radius: 4px;
+    outline: 1px solid #727272;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.19);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.2px);
+    -webkit-backdrop-filter: blur(10.2px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .main-div *{
@@ -33,24 +56,30 @@ body{
 #plaintext{
     overflow-wrap: anywhere;
     font-family: 'Courier New', Courier, monospace;
+    background-color: #f0eff2;
+    border-radius: 4px;
+    outline: 1px solid #727272;
+    box-shadow: 0px 0px 1px 1px #ececec;
+    width: 100%;
+    padding: 3px;
+    min-height: 12pt;
 }
 
 #magago{
-    width:50%;
-    padding: 1px;
-    background-color: black;
-    border: 1px solid #000000;
+    width:45%;
+    border-radius: 4px;
+    outline: 1px solid #727272;
+    box-shadow:inset 0px 0px 0px 1px #fcfcfc;
 }
 
 #controls{
+    border-radius: 4px;
+    outline: 1px solid #727272;
+    background: linear-gradient(0deg, rgba(207, 207, 207, .7) 0%, rgba(219, 219, 219, .7) 49%, rgba(235,235,235,.7) 49%, rgba(252,252,252,.7) 100%); 
     width: 50%;
     display: flex;
     flex-direction: column;
-    background-color: burlywood;
     padding: 5px;
-    border: 2px solid #000000;
-    border-top: 2px solid #545454;
-    border-left: 2px solid #545454;
     margin: 5px;
 }
 
@@ -59,20 +88,40 @@ body{
     width: 100%;
 }
 
-#macacar{
-    background-color: red;
-    padding: 15px;
-    color: white;
-    width: 100%;
+/*Credits to https://github.com/Z2r-YT/7-Aero-Stylesheet*/
+button{
+    box-shadow:inset 0px 0px 0px 1px #fcfcfc;
+    background: linear-gradient(0deg, rgba(207,207,207,1) 0%, rgba(219,219,219,1) 49%, rgba(235,235,235,1) 49%, rgba(252,252,252,1) 100%); 
+    border: none;
+    padding: 3px 12px;
+    outline: 1px solid #727272;
+    border-radius: 4px;
+    min-height: 25px;
+    min-width: 75px;
+}
+
+button:hover{
+    outline: solid 1px #3c7fb1;
+    background: rgb(167,217,245);
+    background: linear-gradient(0deg, rgba(167,217,245,1) 0%, rgba(188,229,252,1) 49%, rgba(217,240,252,1) 49%, rgba(234,246,253,1) 100%); 
+}
+
+button:active{
+    outline: solid 1px #2c628b, 1px dotted #000;
+    background: rgb(104,178,218);
+    background: linear-gradient(0deg, rgba(104,178,218,1) 0%, rgba(152,209,239,1) 49%, rgba(196,229,246,1) 49%, rgba(229,244,252,1) 100%); 
+    box-shadow: inset 0 0 0 2px #86c6e8, inset 0 0 0 1px dotted #000;;
 }
 
 .stroke{
     width: 25px;
     height: 25px;
-    background-color: #ffffff;
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    border: 1px #bebacafe solid;
+    box-shadow:inset 0px 0px 0px 1px #fcfcfc;
+    background: linear-gradient(0deg, rgba(207,207,207,1) 0%, rgba(219,219,219,1) 49%, rgba(235,235,235,1) 49%, rgba(252,252,252,1) 100%); 
+    border: none;
+    outline: 1px solid #727272;
+    border-radius: 4px;
 }
 
 #strokes{
